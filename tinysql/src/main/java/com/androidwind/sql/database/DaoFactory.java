@@ -2,6 +2,8 @@ package com.androidwind.sql.database;
 
 import android.database.sqlite.SQLiteDatabase;
 
+import com.androidwind.sql.util.DBUtil;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,7 +20,7 @@ public class DaoFactory {
     private static volatile DaoFactory sInstance = null;
 
     private DaoFactory() {
-        databasePath = "data/data/com.androidwind.sql.sample/test.db";
+        databasePath = DBUtil.getDatabasePath("tinysql.db");
         sqLiteDatabase = SQLiteDatabase.openOrCreateDatabase(databasePath, null);
     }
 

@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = "TinySQL";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         User user = new User();
         user.setName("Tom");
         User where = new User();
-        where.setId("2");
+        where.setId("1");
         userDao.update(user, where);
         Toast.makeText(this, "更新成功", Toast.LENGTH_SHORT).show();
     }
