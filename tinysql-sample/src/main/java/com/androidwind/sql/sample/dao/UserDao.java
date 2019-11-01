@@ -16,12 +16,15 @@ public class UserDao extends BaseDao<User> {
     //业务相关的数据库处理
     @Override
     public long insert(User entity) {
-        List<User> list = query(new User());
-        User where = null;
-        for (User user : list) {
-            where = new User();
-            where.setId(user.getId());
-            update(entity, where);
+        // List<User> list = query(new User());
+        // User where = null;
+        // for (User user : list) {
+        //     where = new User();
+        //     where.setId(user.getId());
+        //     update(entity, where);
+        // }
+        if (entity!= null && "Jack".equals(entity.getName())) {
+            entity.setName("Jim");
         }
         return super.insert(entity);
     }
